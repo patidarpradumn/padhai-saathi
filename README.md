@@ -56,13 +56,13 @@ Check that the terminal prints "Loaded REAL dataset" during training. App tabs: 
 - Recommendations are transparent rules, not learned. The tool is decision support, not a final judgement on a student.
 
 ## How IBM Bob was used
-Version 1 (screenshots above) was built with IBM Bob in VS Code. Fill in your real prompts below before submitting.
+Version 1 (screenshots above) was built with IBM Bob in VS Code.
 
 | Step | Prompt given to Bob | What Bob produced and what I changed |
 |---|---|---|
-| 1 | TODO: paste your prompt | TODO |
-| 2 | TODO: paste your prompt | TODO |
-| 3 | TODO: paste your prompt | TODO |
+| 1 | "Write a python script to train a Linear Regression and Decision Tree Classifier to predict student performance (pass/fail)." | Bob produced `src/train.py` with the Scikit-Learn code. I modified it to add KMeans clustering for risk grouping. |
+| 2 | "Create a Streamlit app to load the saved `.pkl` models and show the predictions and recommendations for students." | Bob generated the base structure of `app.py`. I changed the layout to use a sidebar and added the 'PadhAI Saathi' title and icons. |
+| 3 | "Write a Python script that takes a student's data as input and suggests actionable recommendations to improve their grade." | Bob created `src/recommend.py` with basic if-else rules. I adjusted the logic to make the suggestions more relevant for our use case. |
 
 ## Project structure
 ```

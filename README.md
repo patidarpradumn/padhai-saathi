@@ -55,14 +55,10 @@ Check that the terminal prints "Loaded REAL dataset" during training. App tabs: 
 - The predicted grade (regression) and pass/fail (classifier) are separate models, so they can disagree close to the pass mark.
 - Recommendations are transparent rules, not learned. The tool is decision support, not a final judgement on a student.
 
-## How IBM Bob was used
-Version 1 (screenshots above) was built with IBM Bob in VS Code.
-
-| Step | Prompt given to Bob | What Bob produced and what I changed |
-|---|---|---|
-| 1 | "Write a python script to train a Linear Regression and Decision Tree Classifier to predict student performance (pass/fail)." | Bob produced `src/train.py` with the Scikit-Learn code. I modified it to add KMeans clustering for risk grouping. |
-| 2 | "Create a Streamlit app to load the saved `.pkl` models and show the predictions and recommendations for students." | Bob generated the base structure of `app.py`. I changed the layout to use a sidebar and added the 'PadhAI Saathi' title and icons. |
-| 3 | "Write a Python script that takes a student's data as input and suggests actionable recommendations to improve their grade." | Bob created `src/recommend.py` with basic if-else rules. I adjusted the logic to make the suggestions more relevant for our use case. |
+## How AI tools were used
+- The starter code (`src/train.py`, `src/predict.py`, `src/recommend.py`, `app.py`) was drafted with Claude (Anthropic) from my project requirements. The concept note, lean canvas and slides were also drafted with Claude and then filled with my own results.
+- IBM Bob: Opened the project in Bob, used it to explain the Streamlit code structure, fix a `FileNotFoundError` when loading the models, and adjusted the styling of the UI risk cards in Version 1.
+- My own work: downloaded the UCI dataset, trained the models on real data, ran and tested the app on different student cases, took the screenshots, and checked the results.
 
 ## Project structure
 ```
